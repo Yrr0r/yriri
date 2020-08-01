@@ -1,0 +1,10 @@
+# Python cache files directory:
+__pycache__/
+.vscode
+
+# DS_Store on Macintosh:
+.DS_Store
+._.DS_Store
+
+# Other bunch of Macintosh garbage:
+._*
