@@ -11,37 +11,37 @@ nickdict = {}
 
 # Functions:
 def getName(uid):
-    if(type(uid) is str):
-        if(uid in namedict.keys()):
-            return namedict[uid]
-        else:
-            return nickdict[uid]
-    if(type(uid) is list):
-        result = []
-        k = namedict.keys()
-        for n in uid:
-            if(n in k):
-                result.append(namedict[n])
-            else:
-                result.append(nickdict[n])
-        return result
+	if(type(uid) is str):
+		if(uid in namedict.keys()):
+			return namedict[uid]
+		else:
+			return nickdict[uid]
+	if(type(uid) is list):
+		result = []
+		k = namedict.keys()
+		for n in uid:
+			if(n in k):
+				result.append(namedict[n])
+			else:
+				result.append(nickdict[n])
+		return result
 
 def putlist(arr, idx = False):
-    out = ""
-    for i, n in enumerate(arr):
-        if(idx == False):
-            out = out + n + "\n"
-        else:
-            out = out + str(i+1) + "  " + n + "\n"
-    return out[0:-1]
+	out = ""
+	for i, n in enumerate(arr):
+		if(idx == False):
+			out = out + n + "\n"
+		else:
+			out = out + str(i+1) + "  " + n + "\n"
+	return out[0:-1]
 
 def isAdm(Event):
-    role = Event.sender['role']
-    if(str(Event.sender['user_id']) == '2435621458'):
-        return True
-    elif( role == 'admin' or role == 'owner'):
-        return True
-    else:
-        return False
+	role = Event.sender['role']
+	if(str(Event.sender['user_id']) == '2435621458'):
+		return True
+	elif( role == 'admin' or role == 'owner'):
+		return True
+	else:
+		return False
 
 

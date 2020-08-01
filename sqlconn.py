@@ -9,8 +9,8 @@ dbname = 'qqbot'
 db = pymysql.connect(dbserver,dbuser,dbpasswd,dbname)
 
 def keepAlive():
-    try:
-        db.ping(reconnect=True)
-    except:
-        db = pymysql.connect(dbserver,dbuser,dbpasswd,dbname)
-    return db
+	try:
+		db.ping(reconnect=True)
+	except:
+		db = pymysql.connect(dbserver,dbuser,dbpasswd,dbname)
+	return db
