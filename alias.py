@@ -30,14 +30,14 @@ app = bot.server_app
 async def webpage():
 	response = ''
 	
-	response = response + '<h4>Nicks: </h4> <table border=0>'
+	response += '<h4>Nicks: </h4> <table border=0>'
 	for key in nickdict :
-		response = '<tr> <td>'+key+'</td> <td>'+nickdict[key]+'</td> </tr> \n'
-	response = response + '</table>'
+		response += ('<tr> <td>'+key+'</td> <td>'+nickdict[key]+'</td> </tr> \n')
+	response += '</table>'
 	
-	response = response+ '<h4>Names:</h4> <table border=0>'
+	response += '<h4>Names:</h4> <table border=0>'
 	for key in namedict : 
-		response = '<tr> <td>'+key+'</td> <td>'+namedict[key]+'</td> </tr> \n'
-	response = response + '</table>'
+		response += ('<tr> <td>'+key+'</td> <td>'+namedict[key]+'</td> </tr> \n')
+	response += '</table>'
 	
 	return response
