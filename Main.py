@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # coding=utf-8
 
-import copy
-
 from aiocqhttp import CQHttp, Event
 
 from common import *
@@ -26,53 +24,49 @@ def gethelp(ask):
 
 @bot.on_message("group")
 async def _(event: Event):
-	eventc = copy.deepcopy(event)
-	message = eventc.message
+	message = event.message
 	cmdmark = message[0]
 	if(cmdmark != '.' and cmdmark != '。'):
 		return None
-	else:
-		eventc.message = eventc.message.replace('.', '', 1)
-		eventc.message = eventc.message.replace('。', '', 1)
 	
-	gid = str(eventc['group_id'])
-	uid = str(eventc.sender['user_id'])
+	gid = str(event['group_id'])
+	uid = str(event.sender['user_id'])
 
 	# 更新备用昵称列表
-	nickdict[uid] = str(eventc.sender['nickname'])
+	nickdict[uid] = str(event.sender['nickname'])
 
 	# Adm
-	if(eventc.message.startswith("adm")):
-		await adm.handler(eventc)
+	if(event.message.startswith("adm")):
+		await adm.handler(event)
 	
 	# Help
-	if(eventc.message.startswith("help") or eventc.message.startswith(".man")):
-		await bot.send(eventc, gethelp(eventc.message.replace("help",'',1).strip()))
+	if(event.message.startswith("help") or event.message.startswith("man")):
+		await bot.send(event, gethelp(event.message.replace("help",'',1).strip()))
 	
 	# Nicks
 	if(message.startswith("alias")):
-		await alias.handler(eventc)
+		await alias.handler(event)
 	# Dice
 	elif(message == "rolldice" and Admin().isenabled(gid, 'rolldice')):
-		await dice.handler(eventc)
+		await dice.handler(event)
 	# Party
 	elif(message.startswith("party") and (Admin().isenabled(gid, 'party'))):
-		await party.handler(eventc)
+		await party.handler(event)
 
 	# 复读机
 	elif(message.startswith("echo") and (Admin().isenabled(gid, "echo"))):
-		await misc.echo(eventc)
+		await misc.echo(event)
 	# 倒复读
 	elif (message.startswith("print") and (Admin().isenabled(gid, "echo"))):
-		await misc.print(eventc)
+		await misc.print(event)
 
 	# saving a memo
 	elif(message.startswith("memo") and (Admin().isenabled(gid, 'memo'))):
-		await memo.generalhandler(eventc)
+		await memo.generalhandler(event)
 
 	# call a memo
 	if(message.startswith("=") and (Admin().isenabled(gid, 'memo'))):
-		await memo.generalhandler(eventc)
+		await memo.generalhandler(event)
 
 # 日志工具
 @bot.on_message("group")
