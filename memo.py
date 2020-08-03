@@ -1,6 +1,9 @@
 
 """
-Memo tool：
+Memo tool:
+SYNOPSIS
+Use this applet to write your memo and call them out with predefined keywords.
+USAGE
 memosave [KEY] [VALUE] : store VALUE into KEY
 memodelete [KEY] : delete value stored in KEY
 Use =[KEY] to call out a value.

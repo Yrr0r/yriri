@@ -16,11 +16,11 @@ import chatlog
 import misc
 
 def gethelp(ask):
-	askable = ['alias', 'party']
+	askable = ['alias', 'party', 'memo']
 	if(ask in askable):
 		return (eval(ask).__doc__).strip()
 	elif (ask == ''):
-		ans = "可以用help+命令名查询命令的用法喵！目前支持的功能有：\n"
+		ans = "可以用help+命令名查询命令的用法喵！目前支持的命令名称有：\n"
 		ans += putlist(askable)
 		return ans
 	else:

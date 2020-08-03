@@ -1,4 +1,17 @@
 
+"""
+SYNOPSIS
+一起傻嗨！
+USAGE
+party [command] [arguments]
+[Command]
+join - 加入游戏 (no args)
+leave - 离开 (no args)
+pool - 看看列表里有谁 (no args)
+kick[ID] - 踢人，ID写QQ号 (Admin only)
+玩法：
+shuffle - 返回一个打乱的列表
+"""
 from common import *
 
 import numpy
