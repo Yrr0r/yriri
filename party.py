@@ -3,8 +3,8 @@
 SYNOPSIS
 一起傻嗨！
 USAGE
-party [command] [arguments]
-[Command]
+party [功能] [参数]
+功能：
 join - 加入游戏 (no args)
 leave - 离开 (no args)
 pool - 看看列表里有谁 (no args)
@@ -21,9 +21,13 @@ party = {}
 global lastrock # 上次活动的时间
 lastrock = 0
 
+APPLET = 'party'
+PREFIX = ''
+
 async def handler(event):
-	if(event.message.startswith("party") ):
-		cmd = event.message.replace("party", "", 1).strip()
+	cmdname = PREFIX + APPLET
+	if(event.message.startswith(cmdname) ):
+		cmd = event.message.replace(cmdname, "", 1).strip()
 		uid = str(event.sender['user_id'])
 		gid = str(event['group_id'])
 		if(gid not in party.keys()): party[gid] = []
