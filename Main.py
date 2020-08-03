@@ -25,9 +25,6 @@ def gethelp(ask):
 @bot.on_message("group")
 async def _(event: Event):
 	message = event.message
-	cmdmark = message[0]
-	if(cmdmark != '.' and cmdmark != '。'):
-		return None
 	
 	gid = str(event['group_id'])
 	uid = str(event.sender['user_id'])
