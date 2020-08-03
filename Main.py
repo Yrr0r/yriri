@@ -19,6 +19,10 @@ def gethelp(ask):
 	askable = ['alias', 'party']
 	if(ask in askable):
 		return (eval(ask).__doc__).strip()
+	elif (ask == ''):
+		ans = "可以用help+命令名查询命令的用法喵！目前支持的功能有：\n"
+		ans += putlist(askable)
+		return ans
 	else:
 		return "手册里查不到这个喵"
 
