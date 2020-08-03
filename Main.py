@@ -25,7 +25,7 @@ def gethelp(ask):
 @bot.on_message("group")
 async def _(event: Event):
 	message = event.message
-	cmdmark = message[1]
+	cmdmark = message[0]
 	if(cmdmark != '.' and cmdmark != '。'):
 		return None
 	else:
