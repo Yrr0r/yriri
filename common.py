@@ -44,4 +44,3 @@ def isAdm(Event):
 	else:
 		return False
 
-

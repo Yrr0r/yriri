@@ -24,3 +24,18 @@ async def handler(event):
 	if(output != ""):
 		await bot.send(event, output)
 	return
+
+async def webpage():
+	response = ''
+	
+	response = response + '<h4>Nicks: </h4> <table border=0>'
+	for key in nickdict :
+		response = '<tr> <td>'+key+'</td> <td>'+nickdict[key]+'</td> </tr> \n'
+	response = response + '</table>'
+	
+	response = response+ '<h4>Names:</h4> <table border=0>'
+	for key in namedict : 
+		response = '<tr> <td>'+key+'</td> <td>'+namedict[key]+'</td> </tr> \n'
+	response = response + '</table>'
+	
+	return response
