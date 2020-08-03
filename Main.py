@@ -73,7 +73,7 @@ app = bot.server_app
 async def webroot(feat):
 	if(feat == ''):
 		return ''' <h1> Wrong place, Wrong time. </h1> '''
-	else if(feat == 'alias'):
+	elif(feat == 'alias'):
 		return alias.webpage()
 
 # run web server
