@@ -71,7 +71,10 @@ app = bot.server_app
 
 @app.route('/')
 async def webroot():
-	return "You should not be here."
+	return ''' <h1> Wrong place, Wrong time. </h1> '''
+@app.route('/b/<afunc>')
+async def onroute(afunc):
+    return "You are at" + afunc 
 
 # run web server
 bot.run(host='172.17.0.1', port=9090)
