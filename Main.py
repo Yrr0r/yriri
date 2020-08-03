@@ -26,11 +26,11 @@ def gethelp(ask):
 async def _(event: Event):
 	message = event.message
 	cmdmark = message[0]
-	if(cmdmark != '.' and cmdmark != '。'):
-		return None
-	else:
-		event.message = event.message.replace('.', '', 1)
-		event.message = event.message.replace('。', '', 1)
+	#if(cmdmark != '.' and cmdmark != '。'):
+	#	return None
+	#else:
+	#	event.message = event.message.replace('.', '', 1)
+	#	event.message = event.message.replace('。', '', 1)
 	
 	gid = str(event['group_id'])
 	uid = str(event.sender['user_id'])
@@ -43,7 +43,7 @@ async def _(event: Event):
 		await adm.handler(event)
 	
 	# Help
-	if(event.message.startswith(".help") or event.message.startswith(".man")):
+	if(event.message.startswith("help") or event.message.startswith(".man")):
 		await bot.send(event, gethelp(event.message.replace("help",'',1).strip()))
 	
 	# Nicks
