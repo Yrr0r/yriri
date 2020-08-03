@@ -25,7 +25,8 @@ async def handler(event):
 		await bot.send(event, output)
 	return
 
-@web.route('/alias')
+app = bot.server_app
+@app.route('/alias')
 async def webpage():
 	response = ''
 	

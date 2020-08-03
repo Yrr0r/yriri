@@ -3,7 +3,7 @@ from aiocqhttp import CQHttp, Event
 bot = CQHttp(api_root='http://127.0.0.1:5700')
 
 # Web功能 - Flask server app
-web = bot.server_app
+#web = bot.server_app
 
 #全局变量
 global namedict # 昵称服务
