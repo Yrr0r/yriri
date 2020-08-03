@@ -18,7 +18,7 @@ import misc
 def gethelp(ask):
 	askable = ['alias', 'party']
 	if(ask in askable):
-		return eval(ask).__doc__
+		return (eval(ask).__doc__).strip
 	else:
 		return "手册里查不到这个喵"
 
