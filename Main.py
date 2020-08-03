@@ -69,14 +69,9 @@ async def handle_group_increase(event: Event):
 # Web
 app = bot.server_app
 
-@app.route('/alias')
-async def alias():
-	return alias.webpage()
-
 @app.route('/')
-async def webroot(feat):
-	if(feat == ''):
-		return ''' <h1> Wrong place, Wrong time. </h1> '''
+async def webroot():
+	return ''' <h1> Wrong place, Wrong time. </h1> '''
 
 # run web server
 bot.run(host='172.17.0.1', port=9090)
