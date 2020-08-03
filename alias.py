@@ -1,6 +1,12 @@
 # Set the alias.
 # Need to fix this in future.
 
+"""
+设置小机器人对你的称呼：
+alias [name] 设置昵称：
+alias 后留空为删除
+"""
+
 from common import bot, namedict, nickdict
 
 from adm import Admin

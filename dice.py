@@ -1,4 +1,8 @@
 
+"""
+扔个骰子。
+"""
+
 import random
 import time
 

@@ -1,4 +1,12 @@
 
+"""
+Memo tool：
+memosave [KEY] [VALUE] : store VALUE into KEY
+memodelete [KEY] : delete value stored in KEY
+Use =[KEY] to call out a value.
+**And squre brackets are not part of the command.
+"""
+
 from common import *
 
 from sqlconn import db, keepAlive

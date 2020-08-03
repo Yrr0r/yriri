@@ -2,9 +2,6 @@ from aiocqhttp import CQHttp, Event
 # 最重要的全局变量：机器人本身的对象
 bot = CQHttp(api_root='http://127.0.0.1:5700')
 
-# Web功能 - Flask server app
-#web = bot.server_app
-
 #全局变量
 global namedict # 昵称服务
 namedict = {}
